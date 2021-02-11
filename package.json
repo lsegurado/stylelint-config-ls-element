@@ -49,7 +49,7 @@
     "microbundle": "^0.13.0"
   },
   "peerDependencies": {
-    "eslint": "13.x"
+    "stylelint": "13.x"
   },
   "husky": {
     "hooks": {
