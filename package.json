@@ -1,5 +1,5 @@
 {
-  "name": "stylelint-config-ls-element",
+  "name": "@lsegurado/stylelint-config-ls-element",
   "version": "0.0.1",
   "description": "Base Stylelint configuration for LS-Element projects.",
   "keywords": [
