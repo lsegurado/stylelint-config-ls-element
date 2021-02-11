@@ -1,0 +1,59 @@
+{
+  "name": "stylelint-config-ls-element",
+  "version": "0.0.1",
+  "description": "Base Stylelint configuration for LS-Element projects.",
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
+  "repository": "@lsegurado/stylelint-config-ls-element",
+  "license": "MIT",
+  "author": "Lucas M. Segurado",
+  "main": "dist/stylelint-config-ls-element.js",
+  "module": "dist/stylelint-config-ls-element.module.js",
+  "exports": {
+    ".": {
+      "import": "./dist/stylelint-config-ls-element.module.js",
+      "require": "./dist/stylelint-config-ls-element.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle -f es,cjs --target node --no-sourcemap src/index.js",
+    "publish-patch-version": "npm version patch && npm run publish-npm",
+    "publish-npm": "npm run build && npm publish --access public",
+    "lint": "eslint --fix src/**/*.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "no-empty": 0
+    }
+  },
+  "dependencies": {
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8",
+    "eslint": "^7.19.0",
+    "microbundle": "^0.13.0"
+  },
+  "peerDependencies": {
+    "eslint": "13.x"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
